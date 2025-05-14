@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Senin İçin Nisa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    .login-screen, .main-content {
+      display: none;
+      padding: 40px 20px;
+    }
+
+    .login-screen.active, .main-content.active {
+      display: block;
+    }
+
+    .login-box {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 300px;
+      margin: 100px auto;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 80%;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    video {
+      margin-top: 20px;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-screen active">
+    <div class="login-box">
+      <h2>Şifreyi Gir</h2>
+      <input type="password" id="password" placeholder="Şifre">
+      <br>
+      <button onclick="checkPassword()">Giriş Yap</button>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h1>Nisa'ya</h1>
+    <p>Bu sayfa sadece sana özel. Seni çok seviyorum sevgilim, iyi ki varsın.</p>
+
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Photo 1">
+      <img src="photo2.jpg" alt="Photo 2">
+      <img src="photo3.jpg" alt="Photo 3">
+      <img src="photo4.jpg" alt="Photo 4">
+    </div>
+
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+      <source src="video2.mp4" type="video/mp4">
+    </video>
+
+    <audio autoplay loop>
+      <source src="Kumralım.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password').value;
+      if (input === '18102024') {
+        document.querySelector('.login-screen').classList.remove('active');
+        document.querySelector('.main-content').classList.add('active');
+      } else {
+        alert('Şifre yanlış!');
+      }
+    }
+  </script>
+</body>
+</html>
